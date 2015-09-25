@@ -1,0 +1,16 @@
+{
+    "name": "tachyon_master",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "role for the tachyon master machine",
+    "run_list": [
+        "role[tachyon]",
+        "recipe[tachyon::master_init]",
+        "recipe[tachyon::start_master]"
+    ],
+    "normal_attributes": {
+        "tachyon": {
+            "worker_ips": ["localhost"] 
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "hadoop_nn",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "for systems acting as the hadoop namenode",
+    "run_list": [
+        "role[base]",
+        "recipe[hadoop::hadoop_hdfs_namenode]",
+        "recipe[hadoop_wrapper::hadoop_nn_init]",
+        "recipe[hadoop_wrapper::hadoop_nn_start]"
+    ],
+    "override_attributes": {
+        "hadoop": {
+            "distribution": "cdh",
+            "distribution_version": "5.4",
+            "core_site": {
+                "fs.defaultFS": "hdfs://localhost" 
+            },
+            "hdfs_site": {
+                "dfs.namenode.datanode.registration.ip-hostname-check": false 
+            }
+        }
+    }
+}
+
+
