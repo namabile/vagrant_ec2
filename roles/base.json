@@ -19,8 +19,10 @@
     ],
     "default_attributes": {
         "rvm": {
-            "ubuntu": {
-            "rubies": ["stable"]
+            "installs": {
+                "ubuntu": {
+                    "rubies": ["stable"]
+                }
             }
         },
         "ubuntu": {
